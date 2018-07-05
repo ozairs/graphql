@@ -1,0 +1,26 @@
+type Team {
+    name: String
+    arena: String
+    city: String
+    homepage: String
+}
+
+type Player {
+    name: String
+    league: String
+    position: String
+    team: [Team]
+    picture: String
+}
+
+enum League {
+    nhl
+    nba
+    nfl
+    mlb
+}
+
+type Query {
+    Teams(name: String, league: [League]): [Team]
+    Players(name: String, league: [League]): [Player]
+}
